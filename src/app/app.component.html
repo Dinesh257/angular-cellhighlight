@@ -1,0 +1,34 @@
+
+<div class="container">
+    <button type="button" class="btn btn-primary" (click)="reload()">Refresh</button>
+</div>
+<div class="container">
+<wj-flex-grid #flex         
+              [itemsSource]="treeData"
+               [headersVisibility]="1"
+               [allowResizing]="'None'"
+               [childItemsPath]="'items'"
+              (cellEditEnding)="onCellEditEnding($event, flex)"
+            >
+    <wj-flex-grid-column [isReadOnly]="true"
+                         [binding]="'name'"
+                         [width]="'*'">
+        <ng-template wjFlexGridCellTemplate
+                     [cellType]="'Cell'"
+                     let-cell="cell">
+             {{cell.item.name}}
+        </ng-template>
+    </wj-flex-grid-column>
+    <wj-flex-grid-column [isReadOnly]="false"
+                         [binding]="'length'"
+                         [width]="'*'"
+                         [align]="'center'">
+        <ng-template wjFlexGridCellTemplate
+                     [cellType]="'Cell'"
+                     let-cell="cell">
+             {{cell.item.length}}
+        </ng-template>
+    </wj-flex-grid-column>
+</wj-flex-grid>
+</div>
+ 

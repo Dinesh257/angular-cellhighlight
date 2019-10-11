@@ -3,7 +3,7 @@ import { CollectionView } from 'wijmo/wijmo';
 
 import * as wjcCore from 'wijmo/wijmo';
 import * as wjcGrid from 'wijmo/wijmo.angular2.grid';
-import { GroupRow, CellRangeEventArgs, } from 'wijmo/wijmo.grid';
+import { GroupRow, CellRangeEventArgs, FlexGrid, CellRange } from 'wijmo/wijmo.grid';
 import { FlexGridDetailProvider } from 'wijmo/wijmo.grid.detail';
 
 
@@ -26,6 +26,10 @@ export class AppComponent implements OnInit {
       console.log(1);
       // alert(gridname.columns.length);
 
+    }
+
+     onItemsSourceChanged(s: FlexGrid, e) {
+      s.select(new CellRange(-1, -1))
     }
 
     reload(){

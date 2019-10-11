@@ -8,6 +8,7 @@
                [headersVisibility]="1"
                [allowResizing]="'None'"
                [childItemsPath]="'items'"
+              (itemsSourceChanged)="onItemsSourceChanged(flex, $event)"
               (cellEditEnding)="onCellEditEnding($event, flex)"
             >
     <wj-flex-grid-column [isReadOnly]="true"
